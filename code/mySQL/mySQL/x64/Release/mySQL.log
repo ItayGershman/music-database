@@ -1,0 +1,11 @@
+﻿  MusicDB.cpp
+MusicDB.cpp(436): warning C4101: 'buff': unreferenced local variable
+MusicDB.cpp(473): warning C4101: 'buff': unreferenced local variable
+MusicDB.cpp(513): warning C4101: 'buff': unreferenced local variable
+MusicDB.cpp(678): warning C4101: 'buff': unreferenced local variable
+  Generating code
+  17 of 143 functions (11.9%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  mySQL.vcxproj -> C:\Users\איתי גרשמן\source\repos\mySQL\x64\Release\mySQL.exe
