@@ -4,7 +4,7 @@
 MusicDB::MusicDB(){
 	//make connection and session
 	
-	sess = mysqlx_get_session("localhost", DEFAULT_MYSQLX_PORT, "root", "gERshman8", "", err_msg, &err_code);
+	sess = mysqlx_get_session("localhost", DEFAULT_MYSQLX_PORT, "root", "password", "", err_msg, &err_code);
 	if (NULL == sess) {
 		cout << "error occured creating the session" << endl;
 	}
