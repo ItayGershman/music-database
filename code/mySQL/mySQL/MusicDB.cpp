@@ -526,9 +526,6 @@ void MusicDB::musiciainDiffAlbums() {
 //action 4
 void MusicDB::commonInstrument() {
 	cout << "action 4:" << endl;
-	string get;
-	cin >> get;
-	//i made it only because the compiler doesnt stop on breakpoint unless i get something from the screen
 	sess = mysqlx_get_session("localhost", DEFAULT_MYSQLX_PORT, "root", "gERshman8", "Music_DB", err_msg, &err_code);
 	string query = "SELECT instrument_type as popular_instrument FROM (SELECT fk_musician, instrument_type\
  FROM instrument AS i JOIN musicians_and_instruments as mi ON mi.fk_instrument = i.instrument_id\
@@ -553,7 +550,6 @@ void MusicDB::commonInstrument() {
 
 //action 5
 void MusicDB::showInstruments() {
-	getchar();
 	cout << "action 5:" << endl;
 	sess = mysqlx_get_session("localhost", DEFAULT_MYSQLX_PORT, "root", "gERshman8", "Music_DB", err_msg, &err_code);
 	string album;
@@ -567,7 +563,6 @@ void MusicDB::showInstruments() {
  JOIN album_and_musical_scene AS ams ON ams.musical_scene = msm.fk_song_id\
  JOIN album as a ON a.album_id = ams.album_id\
  WHERE a.album_name = '"+album+"';";
-	cout << query << endl;
 	mysqlx_stmt_t* q5 = mysqlx_sql_new(sess, query.c_str(), MYSQLX_NULL_TERMINATED);
 	mysqlx_result_t*  res = mysqlx_execute(q5);
 
@@ -595,7 +590,6 @@ void MusicDB::showInstruments() {
 
 //action 6
 void MusicDB::fertileProducer() {
-	getchar();
 	cout << "action 6:" << endl;
 	sess = mysqlx_get_session("localhost", DEFAULT_MYSQLX_PORT, "root", "gERshman8", "Music_DB", err_msg, &err_code);
 	string query = "SELECT producer_name, COUNT(producer_id) AS most_productive_pro\
@@ -770,7 +764,7 @@ void MusicDB::technitionMostSongs() {
 	mysqlx_result_t*  res = mysqlx_execute(q11);
 	if (NULL != res) {
 		char buff[256]; size_t size = 0;
-		cout << "\nMost popular genere is: ";
+		cout << "\nRrecording technician who recorded the largest number of songs between Date1 and Date2: ";
 		mysqlx_row_t* row = mysqlx_row_fetch_one(res);
 		if (res != NULL) {
 			size = sizeof(buff);
